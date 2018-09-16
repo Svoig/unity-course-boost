@@ -24,7 +24,14 @@ public class Rocket : MonoBehaviour {
 	}
 
     void OnCollisionEnter(Collision collision) {
-        print("Collided!");
+        switch(collision.gameObject.tag) {
+            case "Friendly":
+                print("You am OK!");
+                break;
+            default:
+                print("You have dead");
+                break;
+        }
     }
 
     private void Thrust()
